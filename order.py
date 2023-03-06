@@ -6,6 +6,4 @@ class Coffe:
         self.order_ingredients=order_ingredient
     
     def make_coffee(self, drink_name, order_ingredient):
-    #    for items in order_ingredient:
-    #      Resources.resources[items] -= self.order_ingredient[items]
        print(f"here is your {self.drink_name}!!! ")

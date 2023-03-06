@@ -8,9 +8,6 @@ class Menu:
       return self.menu           
 
 class Resources:
-    # def __init__(self,resources, order_ingredients):
-    #     self.resources=resources
-    #     self.order_ingredients=order_ingredients
     def __init__(self, resources, order_ingredients):
         self.resources = resources
         self.order_ingredients = order_ingredients

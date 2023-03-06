@@ -33,37 +33,25 @@ RESOURCES={
     "coffee": 100,
 }
 is_on = True
-total=1
-# report=Resources(RESOURCES, )
+# total=1
 
 while is_on:
     choice = input("what would you like? (espresso/latte/cappuccino): ")
     if choice == "off":
         is_on = False
     elif choice == "report":
-        # print(Resources(RESOURCES, drink["ingredients"]).report())
+        
         print(Resources(RESOURCES, None).report())
-        # print(Resource(RESOURCES, None).resources)
-        # print(f"Water: {resources['water']}")
-        # print(f"Milk: {resources['milk']}")
-        # print(f"Coffee: {resources['coffee']}")
+
     elif choice in ["latte", "cappuccino","espresso" ]:
         drink = MENU[choice]
-        # if Resources.is_resources_sufficient(drink["ingredients"]):
-        # if Resources( order_ingredients=MENU[choice]["ingredients"]).is_resources_sufficient():
-        # if Resources(resources=RESOURCES(, MENU[choice]["ingredients"]).is_resources_sufficient():
         if Resources(resources=RESOURCES, order_ingredients=drink["ingredients"]).is_resources_sufficient(drink["ingredients"]):
-            # payment = Payment.process_coins()
             payment=Payment(total=None, money_received=None, drink_cost=None).process_coins()
-            # money=total
-
-            # if Payment.is_transaction_successful(payment, drink["cost"]):
+        
             if Payment(total=None, money_received=payment, drink_cost=drink["cost"]).is_transaction_successful(money_received=payment, drink_cost=drink["cost"]):
-                # Coffe.make_coffee(choice, drink["ingredients"])
+                
                 Coffe(drink_name=choice, order_ingredient=drink["ingredients"]).make_coffee(choice, drink["ingredients"])
                 Resources(resources=RESOURCES, order_ingredients=drink["ingredients"]).Update_resources(RESOURCES, drink["ingredients"])
     else:
         print("Invalid output")
             
-# order=Menu(MENU)
-# print(order.get_menu())
