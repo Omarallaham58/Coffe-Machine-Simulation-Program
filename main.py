@@ -61,6 +61,7 @@ while is_on:
             if Payment(total=None, money_received=payment, drink_cost=drink["cost"]).is_transaction_successful(money_received=payment, drink_cost=drink["cost"]):
                 # Coffe.make_coffee(choice, drink["ingredients"])
                 Coffe(drink_name=choice, order_ingredient=drink["ingredients"]).make_coffee(choice, drink["ingredients"])
+                Resources(resources=RESOURCES, order_ingredients=drink["ingredients"]).Update_resources(RESOURCES, drink["ingredients"])
     else:
         print("Invalid output")
             

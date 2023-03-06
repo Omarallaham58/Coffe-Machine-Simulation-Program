@@ -25,3 +25,6 @@ class Resources:
             return False
 
         return True
+    def Update_resources(self, resources, order_ingredients):
+        for item in order_ingredients:
+             Resources(self.resources, self.order_ingredients).resources[item] -= self.order_ingredients[item]
